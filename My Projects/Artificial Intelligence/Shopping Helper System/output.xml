@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<sparql xmlns="http://www.w3.org/2005/sparql-results#">
+  <head>
+    <variable name="Shops"/>
+  </head>
+  <results>
+    <result>
+      <binding name="Shops">
+        <uri>http://www.utdallas.edu/kisna/shoppingsystem#Macys</uri>
+      </binding>
+    </result>
+    <result>
+      <binding name="Shops">
+        <uri>http://www.utdallas.edu/kisna/shoppingsystem#The_Childrens_Place</uri>
+      </binding>
+    </result>
+  </results>
+</sparql>

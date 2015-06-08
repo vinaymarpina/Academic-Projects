@@ -1,0 +1,758 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY shoppingsystem "http://www.utdallas.edu/kisna/shoppingsystem#" >
+]>
+
+
+<rdf:RDF xmlns="http://www.utdallas.edu/kisna/shoppingsystem#"
+     xml:base="http://www.utdallas.edu/kisna/shoppingsystem"
+     xmlns:shoppingsystem="http://www.utdallas.edu/kisna/shoppingsystem#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.utdallas.edu/kisna/shoppingsystem"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.utdallas.edu/kisna/shoppingsystem#available_at -->
+
+    <owl:ObjectProperty rdf:about="&shoppingsystem;available_at">
+        <rdfs:domain rdf:resource="&shoppingsystem;Brands"/>
+        <rdfs:range rdf:resource="&shoppingsystem;Shops"/>
+        <owl:propertyDisjointWith rdf:resource="&shoppingsystem;product_of"/>
+        <owl:propertyDisjointWith rdf:resource="&shoppingsystem;type_of"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.utdallas.edu/kisna/shoppingsystem#product_of -->
+
+    <owl:ObjectProperty rdf:about="&shoppingsystem;product_of">
+        <rdfs:domain rdf:resource="&shoppingsystem;BrandCatalouge"/>
+        <rdfs:range rdf:resource="&shoppingsystem;Brands"/>
+        <owl:propertyDisjointWith rdf:resource="&shoppingsystem;type_of"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.utdallas.edu/kisna/shoppingsystem#type_of -->
+
+    <owl:ObjectProperty rdf:about="&shoppingsystem;type_of">
+        <rdfs:range rdf:resource="&shoppingsystem;BrandCatalouge"/>
+        <rdfs:domain rdf:resource="&shoppingsystem;Interests"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.utdallas.edu/kisna/shoppingsystem#ShopNumber -->
+
+    <owl:DatatypeProperty rdf:about="&shoppingsystem;ShopNumber">
+        <rdfs:domain rdf:resource="&shoppingsystem;Shops"/>
+        <rdfs:range rdf:resource="&xsd;integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.utdallas.edu/kisna/shoppingsystem#BrandCatalouge -->
+
+    <owl:Class rdf:about="&shoppingsystem;BrandCatalouge">
+        <rdfs:subClassOf rdf:resource="&shoppingsystem;Brands"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.utdallas.edu/kisna/shoppingsystem#Brands -->
+
+    <owl:Class rdf:about="&shoppingsystem;Brands"/>
+    
+
+
+    <!-- http://www.utdallas.edu/kisna/shoppingsystem#Interests -->
+
+    <owl:Class rdf:about="&shoppingsystem;Interests"/>
+    
+
+
+    <!-- http://www.utdallas.edu/kisna/shoppingsystem#Shops -->
+
+    <owl:Class rdf:about="&shoppingsystem;Shops"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.utdallas.edu/kisna/shoppingsystem#Abrocombi -->
+
+    <owl:NamedIndividual rdf:about="&shoppingsystem;Abrocombi">
+        <rdf:type rdf:resource="&shoppingsystem;Brands"/>
+        <available_at rdf:resource="&shoppingsystem;PACSUN"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.utdallas.edu/kisna/shoppingsystem#Addidas -->
+
+    <owl:NamedIndividual rdf:about="&shoppingsystem;Addidas">
+        <rdf:type rdf:resource="&shoppingsystem;Brands"/>
+        <available_at rdf:resource="&shoppingsystem;Macys"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.utdallas.edu/kisna/shoppingsystem#Age_of_Empires -->
+
+    <owl:NamedIndividual rdf:about="&shoppingsystem;Age_of_Empires">
+        <rdf:type rdf:resource="&shoppingsystem;Interests"/>
+        <type_of rdf:resource="&shoppingsystem;XBox"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.utdallas.edu/kisna/shoppingsystem#American_Football -->
+
+    <owl:NamedIndividual rdf:about="&shoppingsystem;American_Football">
+        <rdf:type rdf:resource="&shoppingsystem;Interests"/>
+        <type_of rdf:resource="&shoppingsystem;Ball_Game"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.utdallas.edu/kisna/shoppingsystem#Avatar -->
+
+    <owl:NamedIndividual rdf:about="&shoppingsystem;Avatar">
+        <rdf:type rdf:resource="&shoppingsystem;Interests"/>
+        <type_of rdf:resource="&shoppingsystem;Movie"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.utdallas.edu/kisna/shoppingsystem#Ball_Game -->
+
+    <owl:NamedIndividual rdf:about="&shoppingsystem;Ball_Game">
+        <rdf:type rdf:resource="&shoppingsystem;BrandCatalouge"/>
+        <product_of rdf:resource="&shoppingsystem;Addidas"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.utdallas.edu/kisna/shoppingsystem#Base_Ball -->
+
+    <owl:NamedIndividual rdf:about="&shoppingsystem;Base_Ball">
+        <rdf:type rdf:resource="&shoppingsystem;Interests"/>
+        <type_of rdf:resource="&shoppingsystem;Ball_Game"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.utdallas.edu/kisna/shoppingsystem#Basket_Ball -->
+
+    <owl:NamedIndividual rdf:about="&shoppingsystem;Basket_Ball">
+        <rdf:type rdf:resource="&shoppingsystem;Interests"/>
+        <type_of rdf:resource="&shoppingsystem;Ball_Game"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.utdallas.edu/kisna/shoppingsystem#Bath_and_Body_Works -->
+
+    <owl:NamedIndividual rdf:about="&shoppingsystem;Bath_and_Body_Works">
+        <rdf:type rdf:resource="&shoppingsystem;Shops"/>
+        <ShopNumber rdf:datatype="&xsd;integer">12</ShopNumber>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.utdallas.edu/kisna/shoppingsystem#Beatels -->
+
+    <owl:NamedIndividual rdf:about="&shoppingsystem;Beatels">
+        <rdf:type rdf:resource="&shoppingsystem;Interests"/>
+        <type_of rdf:resource="&shoppingsystem;Music"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.utdallas.edu/kisna/shoppingsystem#Call_of_Duty -->
+
+    <owl:NamedIndividual rdf:about="&shoppingsystem;Call_of_Duty">
+        <rdf:type rdf:resource="&shoppingsystem;Interests"/>
+        <type_of rdf:resource="&shoppingsystem;XBox"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.utdallas.edu/kisna/shoppingsystem#Check_Shirts -->
+
+    <owl:NamedIndividual rdf:about="&shoppingsystem;Check_Shirts">
+        <rdf:type rdf:resource="&shoppingsystem;Interests"/>
+        <type_of rdf:resource="&shoppingsystem;Formal_wear"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.utdallas.edu/kisna/shoppingsystem#Counter_Strike -->
+
+    <owl:NamedIndividual rdf:about="&shoppingsystem;Counter_Strike">
+        <rdf:type rdf:resource="&shoppingsystem;Interests"/>
+        <type_of rdf:resource="&shoppingsystem;PS3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.utdallas.edu/kisna/shoppingsystem#Cricket -->
+
+    <owl:NamedIndividual rdf:about="&shoppingsystem;Cricket">
+        <rdf:type rdf:resource="&shoppingsystem;Interests"/>
+        <type_of rdf:resource="&shoppingsystem;Ball_Game"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.utdallas.edu/kisna/shoppingsystem#Denim_Jacket -->
+
+    <owl:NamedIndividual rdf:about="&shoppingsystem;Denim_Jacket">
+        <rdf:type rdf:resource="&shoppingsystem;Interests"/>
+        <type_of rdf:resource="&shoppingsystem;Jackets"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.utdallas.edu/kisna/shoppingsystem#Diabolic -->
+
+    <owl:NamedIndividual rdf:about="&shoppingsystem;Diabolic">
+        <rdf:type rdf:resource="&shoppingsystem;Interests"/>
+        <type_of rdf:resource="&shoppingsystem;PS3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.utdallas.edu/kisna/shoppingsystem#Die_Hard -->
+
+    <owl:NamedIndividual rdf:about="&shoppingsystem;Die_Hard">
+        <rdf:type rdf:resource="&shoppingsystem;Interests"/>
+        <type_of rdf:resource="&shoppingsystem;Movie"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.utdallas.edu/kisna/shoppingsystem#Dinning_table -->
+
+    <owl:NamedIndividual rdf:about="&shoppingsystem;Dinning_table">
+        <rdf:type rdf:resource="&shoppingsystem;Interests"/>
+        <type_of rdf:resource="&shoppingsystem;Wood_Products"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.utdallas.edu/kisna/shoppingsystem#Express_Avenue -->
+
+    <owl:NamedIndividual rdf:about="&shoppingsystem;Express_Avenue">
+        <rdf:type rdf:resource="&shoppingsystem;Shops"/>
+        <ShopNumber rdf:datatype="&xsd;integer">2</ShopNumber>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.utdallas.edu/kisna/shoppingsystem#Fight_Club -->
+
+    <owl:NamedIndividual rdf:about="&shoppingsystem;Fight_Club">
+        <rdf:type rdf:resource="&shoppingsystem;Interests"/>
+        <type_of rdf:resource="&shoppingsystem;Movie"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.utdallas.edu/kisna/shoppingsystem#Foot_World -->
+
+    <owl:NamedIndividual rdf:about="&shoppingsystem;Foot_World">
+        <rdf:type rdf:resource="&shoppingsystem;Shops"/>
+        <ShopNumber rdf:datatype="&xsd;integer">13</ShopNumber>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.utdallas.edu/kisna/shoppingsystem#Forever21 -->
+
+    <owl:NamedIndividual rdf:about="&shoppingsystem;Forever21">
+        <rdf:type rdf:resource="&shoppingsystem;Shops"/>
+        <ShopNumber rdf:datatype="&xsd;integer">6</ShopNumber>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.utdallas.edu/kisna/shoppingsystem#Formal_wear -->
+
+    <owl:NamedIndividual rdf:about="&shoppingsystem;Formal_wear">
+        <rdf:type rdf:resource="&shoppingsystem;BrandCatalouge"/>
+        <product_of rdf:resource="&shoppingsystem;Abrocombi"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.utdallas.edu/kisna/shoppingsystem#Game_On -->
+
+    <owl:NamedIndividual rdf:about="&shoppingsystem;Game_On">
+        <rdf:type rdf:resource="&shoppingsystem;Brands"/>
+        <available_at rdf:resource="&shoppingsystem;Movie_World"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.utdallas.edu/kisna/shoppingsystem#Game_Stop -->
+
+    <owl:NamedIndividual rdf:about="&shoppingsystem;Game_Stop">
+        <rdf:type rdf:resource="&shoppingsystem;Brands"/>
+        <available_at rdf:resource="&shoppingsystem;Game_World"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.utdallas.edu/kisna/shoppingsystem#Game_World -->
+
+    <owl:NamedIndividual rdf:about="&shoppingsystem;Game_World">
+        <rdf:type rdf:resource="&shoppingsystem;Shops"/>
+        <ShopNumber rdf:datatype="&xsd;integer">7</ShopNumber>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.utdallas.edu/kisna/shoppingsystem#Great_Clips -->
+
+    <owl:NamedIndividual rdf:about="&shoppingsystem;Great_Clips">
+        <rdf:type rdf:resource="&shoppingsystem;Shops"/>
+        <ShopNumber rdf:datatype="&xsd;integer">20</ShopNumber>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.utdallas.edu/kisna/shoppingsystem#Halo3 -->
+
+    <owl:NamedIndividual rdf:about="&shoppingsystem;Halo3">
+        <rdf:type rdf:resource="&shoppingsystem;Interests"/>
+        <type_of rdf:resource="&shoppingsystem;XBox"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.utdallas.edu/kisna/shoppingsystem#Horse_Racing -->
+
+    <owl:NamedIndividual rdf:about="&shoppingsystem;Horse_Racing">
+        <rdf:type rdf:resource="&shoppingsystem;Interests"/>
+        <type_of rdf:resource="&shoppingsystem;Horse_Riding"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.utdallas.edu/kisna/shoppingsystem#Horse_Riding -->
+
+    <owl:NamedIndividual rdf:about="&shoppingsystem;Horse_Riding">
+        <rdf:type rdf:resource="&shoppingsystem;BrandCatalouge"/>
+        <product_of rdf:resource="&shoppingsystem;Nike"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.utdallas.edu/kisna/shoppingsystem#IMAX -->
+
+    <owl:NamedIndividual rdf:about="&shoppingsystem;IMAX">
+        <rdf:type rdf:resource="&shoppingsystem;Shops"/>
+        <ShopNumber rdf:datatype="&xsd;integer">16</ShopNumber>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.utdallas.edu/kisna/shoppingsystem#Iron_Products -->
+
+    <owl:NamedIndividual rdf:about="&shoppingsystem;Iron_Products">
+        <rdf:type rdf:resource="&shoppingsystem;BrandCatalouge"/>
+        <product_of rdf:resource="&shoppingsystem;Pathocary"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.utdallas.edu/kisna/shoppingsystem#JC_Penny -->
+
+    <owl:NamedIndividual rdf:about="&shoppingsystem;JC_Penny">
+        <rdf:type rdf:resource="&shoppingsystem;Shops"/>
+        <ShopNumber rdf:datatype="&xsd;integer">1</ShopNumber>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.utdallas.edu/kisna/shoppingsystem#Jackets -->
+
+    <owl:NamedIndividual rdf:about="&shoppingsystem;Jackets">
+        <rdf:type rdf:resource="&shoppingsystem;BrandCatalouge"/>
+        <product_of rdf:resource="&shoppingsystem;Levis"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.utdallas.edu/kisna/shoppingsystem#Jeans -->
+
+    <owl:NamedIndividual rdf:about="&shoppingsystem;Jeans">
+        <rdf:type rdf:resource="&shoppingsystem;BrandCatalouge"/>
+        <product_of rdf:resource="&shoppingsystem;Levis"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.utdallas.edu/kisna/shoppingsystem#Kay_Jewellers -->
+
+    <owl:NamedIndividual rdf:about="&shoppingsystem;Kay_Jewellers">
+        <rdf:type rdf:resource="&shoppingsystem;Shops"/>
+        <ShopNumber rdf:datatype="&xsd;integer">4</ShopNumber>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.utdallas.edu/kisna/shoppingsystem#Leather_Jacket -->
+
+    <owl:NamedIndividual rdf:about="&shoppingsystem;Leather_Jacket">
+        <rdf:type rdf:resource="&shoppingsystem;Interests"/>
+        <type_of rdf:resource="&shoppingsystem;Jackets"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.utdallas.edu/kisna/shoppingsystem#Levis -->
+
+    <owl:NamedIndividual rdf:about="&shoppingsystem;Levis">
+        <rdf:type rdf:resource="&shoppingsystem;Brands"/>
+        <available_at rdf:resource="&shoppingsystem;Forever21"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.utdallas.edu/kisna/shoppingsystem#Macys -->
+
+    <owl:NamedIndividual rdf:about="&shoppingsystem;Macys">
+        <rdf:type rdf:resource="&shoppingsystem;Shops"/>
+        <ShopNumber rdf:datatype="&xsd;integer">3</ShopNumber>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.utdallas.edu/kisna/shoppingsystem#Metallica -->
+
+    <owl:NamedIndividual rdf:about="&shoppingsystem;Metallica">
+        <rdf:type rdf:resource="&shoppingsystem;Interests"/>
+        <type_of rdf:resource="&shoppingsystem;Music"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.utdallas.edu/kisna/shoppingsystem#Movie -->
+
+    <owl:NamedIndividual rdf:about="&shoppingsystem;Movie">
+        <rdf:type rdf:resource="&shoppingsystem;BrandCatalouge"/>
+        <product_of rdf:resource="&shoppingsystem;Game_On"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.utdallas.edu/kisna/shoppingsystem#Movie_World -->
+
+    <owl:NamedIndividual rdf:about="&shoppingsystem;Movie_World">
+        <rdf:type rdf:resource="&shoppingsystem;Shops"/>
+        <ShopNumber rdf:datatype="&xsd;integer">14</ShopNumber>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.utdallas.edu/kisna/shoppingsystem#Music -->
+
+    <owl:NamedIndividual rdf:about="&shoppingsystem;Music">
+        <rdf:type rdf:resource="&shoppingsystem;BrandCatalouge"/>
+        <product_of rdf:resource="&shoppingsystem;Game_Stop"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.utdallas.edu/kisna/shoppingsystem#Nike -->
+
+    <owl:NamedIndividual rdf:about="&shoppingsystem;Nike">
+        <rdf:type rdf:resource="&shoppingsystem;Brands"/>
+        <available_at rdf:resource="&shoppingsystem;Express_Avenue"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.utdallas.edu/kisna/shoppingsystem#Nirvana -->
+
+    <owl:NamedIndividual rdf:about="&shoppingsystem;Nirvana">
+        <rdf:type rdf:resource="&shoppingsystem;Interests"/>
+        <type_of rdf:resource="&shoppingsystem;Music"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.utdallas.edu/kisna/shoppingsystem#PACSUN -->
+
+    <owl:NamedIndividual rdf:about="&shoppingsystem;PACSUN">
+        <rdf:type rdf:resource="&shoppingsystem;Shops"/>
+        <ShopNumber rdf:datatype="&xsd;integer">19</ShopNumber>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.utdallas.edu/kisna/shoppingsystem#PS3 -->
+
+    <owl:NamedIndividual rdf:about="&shoppingsystem;PS3">
+        <rdf:type rdf:resource="&shoppingsystem;BrandCatalouge"/>
+        <product_of rdf:resource="&shoppingsystem;Game_On"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.utdallas.edu/kisna/shoppingsystem#Papa_Johns -->
+
+    <owl:NamedIndividual rdf:about="&shoppingsystem;Papa_Johns">
+        <rdf:type rdf:resource="&shoppingsystem;Shops"/>
+        <ShopNumber rdf:datatype="&xsd;integer">17</ShopNumber>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.utdallas.edu/kisna/shoppingsystem#Pathocary -->
+
+    <owl:NamedIndividual rdf:about="&shoppingsystem;Pathocary">
+        <rdf:type rdf:resource="&shoppingsystem;Brands"/>
+        <available_at rdf:resource="&shoppingsystem;The_Childrens_Place"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.utdallas.edu/kisna/shoppingsystem#Qdoba -->
+
+    <owl:NamedIndividual rdf:about="&shoppingsystem;Qdoba">
+        <rdf:type rdf:resource="&shoppingsystem;Shops"/>
+        <ShopNumber rdf:datatype="&xsd;integer">19</ShopNumber>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.utdallas.edu/kisna/shoppingsystem#Rue21 -->
+
+    <owl:NamedIndividual rdf:about="&shoppingsystem;Rue21">
+        <rdf:type rdf:resource="&shoppingsystem;Shops"/>
+        <ShopNumber rdf:datatype="&xsd;integer">8</ShopNumber>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.utdallas.edu/kisna/shoppingsystem#Scuba_Diving -->
+
+    <owl:NamedIndividual rdf:about="&shoppingsystem;Scuba_Diving">
+        <rdf:type rdf:resource="&shoppingsystem;Interests"/>
+        <type_of rdf:resource="&shoppingsystem;Water_Sports"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.utdallas.edu/kisna/shoppingsystem#Shirts -->
+
+    <owl:NamedIndividual rdf:about="&shoppingsystem;Shirts">
+        <rdf:type rdf:resource="&shoppingsystem;BrandCatalouge"/>
+        <product_of rdf:resource="&shoppingsystem;Abrocombi"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.utdallas.edu/kisna/shoppingsystem#Shooting_Game -->
+
+    <owl:NamedIndividual rdf:about="&shoppingsystem;Shooting_Game">
+        <rdf:type rdf:resource="&shoppingsystem;BrandCatalouge"/>
+        <product_of rdf:resource="&shoppingsystem;Addidas"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.utdallas.edu/kisna/shoppingsystem#Spencer_Gifts -->
+
+    <owl:NamedIndividual rdf:about="&shoppingsystem;Spencer_Gifts">
+        <rdf:type rdf:resource="&shoppingsystem;Shops"/>
+        <ShopNumber rdf:datatype="&xsd;integer">9</ShopNumber>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.utdallas.edu/kisna/shoppingsystem#Star_Bucks -->
+
+    <owl:NamedIndividual rdf:about="&shoppingsystem;Star_Bucks">
+        <rdf:type rdf:resource="&shoppingsystem;Shops"/>
+        <ShopNumber rdf:datatype="&xsd;integer">10</ShopNumber>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.utdallas.edu/kisna/shoppingsystem#Subway -->
+
+    <owl:NamedIndividual rdf:about="&shoppingsystem;Subway">
+        <rdf:type rdf:resource="&shoppingsystem;Shops"/>
+        <ShopNumber rdf:datatype="&xsd;integer">15</ShopNumber>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.utdallas.edu/kisna/shoppingsystem#Swimming -->
+
+    <owl:NamedIndividual rdf:about="&shoppingsystem;Swimming">
+        <rdf:type rdf:resource="&shoppingsystem;Interests"/>
+        <type_of rdf:resource="&shoppingsystem;Water_Sports"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.utdallas.edu/kisna/shoppingsystem#T_Shirts -->
+
+    <owl:NamedIndividual rdf:about="&shoppingsystem;T_Shirts">
+        <rdf:type rdf:resource="&shoppingsystem;Interests"/>
+        <type_of rdf:resource="&shoppingsystem;Shirts"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.utdallas.edu/kisna/shoppingsystem#The_Childrens_Place -->
+
+    <owl:NamedIndividual rdf:about="&shoppingsystem;The_Childrens_Place">
+        <rdf:type rdf:resource="&shoppingsystem;Shops"/>
+        <ShopNumber rdf:datatype="&xsd;integer">5</ShopNumber>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.utdallas.edu/kisna/shoppingsystem#Tree_House -->
+
+    <owl:NamedIndividual rdf:about="&shoppingsystem;Tree_House">
+        <rdf:type rdf:resource="&shoppingsystem;Interests"/>
+        <type_of rdf:resource="&shoppingsystem;Wood_Products"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.utdallas.edu/kisna/shoppingsystem#Water_Sports -->
+
+    <owl:NamedIndividual rdf:about="&shoppingsystem;Water_Sports">
+        <rdf:type rdf:resource="&shoppingsystem;BrandCatalouge"/>
+        <product_of rdf:resource="&shoppingsystem;Nike"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.utdallas.edu/kisna/shoppingsystem#WetSeal -->
+
+    <owl:NamedIndividual rdf:about="&shoppingsystem;WetSeal">
+        <rdf:type rdf:resource="&shoppingsystem;Shops"/>
+        <ShopNumber rdf:datatype="&xsd;integer">11</ShopNumber>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.utdallas.edu/kisna/shoppingsystem#Wood_Products -->
+
+    <owl:NamedIndividual rdf:about="&shoppingsystem;Wood_Products">
+        <rdf:type rdf:resource="&shoppingsystem;BrandCatalouge"/>
+        <product_of rdf:resource="&shoppingsystem;Pathocary"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.utdallas.edu/kisna/shoppingsystem#WorkOut -->
+
+    <owl:NamedIndividual rdf:about="&shoppingsystem;WorkOut">
+        <rdf:type rdf:resource="&shoppingsystem;Interests"/>
+        <type_of rdf:resource="&shoppingsystem;Iron_Products"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.utdallas.edu/kisna/shoppingsystem#World_of_War_Craft -->
+
+    <owl:NamedIndividual rdf:about="&shoppingsystem;World_of_War_Craft">
+        <rdf:type rdf:resource="&shoppingsystem;Interests"/>
+        <type_of rdf:resource="&shoppingsystem;PS3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.utdallas.edu/kisna/shoppingsystem#XBox -->
+
+    <owl:NamedIndividual rdf:about="&shoppingsystem;XBox">
+        <rdf:type rdf:resource="&shoppingsystem;BrandCatalouge"/>
+        <product_of rdf:resource="&shoppingsystem;Game_Stop"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="&shoppingsystem;BrandCatalouge"/>
+            <rdf:Description rdf:about="&shoppingsystem;Brands"/>
+            <rdf:Description rdf:about="&shoppingsystem;Interests"/>
+            <rdf:Description rdf:about="&shoppingsystem;Shops"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.5.1) http://owlapi.sourceforge.net -->
+
