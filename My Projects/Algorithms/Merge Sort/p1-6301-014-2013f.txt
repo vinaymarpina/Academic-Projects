@@ -1,0 +1,23 @@
+
+Project 1 (Optional)
+Sep 1, 2013
+Deadline: TBD
+
+
+1. Implement 3 versions of Merge Sort, and compare their running times
+   on large values of N.  Assume that N is an even power of 2.
+   Submit statistics for different values of N, up to N = 2^20 = 1048576.
+
+   a. Allocate dynamic memory in each call to Merge for L and R
+   b. Use an auxiliary array B[ ] (same size as A).  In each call to
+      Merge, copy contents from A to B and then merge them back
+      to A, in sorted order.
+   c. Use an auxiliary array B[ ] (same size as A).  When data is
+      in A[p..q..r], it is merged into B[p..r].  When data is in
+      B[p..q..r], it is merged into A[p..r].
+
+
+2. Compare performance of Merge Sort and Quick Sort for sorting large
+   amount of data that does not fit within memory.  This is called external
+   sorting.  For more details, contact the instructor.
+

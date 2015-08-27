@@ -1,0 +1,38 @@
+
+CS 6301.014 Implementation of advanced Data Structures and Algorithms
+Fall 2013
+Project 5
+Oct 4, 2013
+
+Version 1.0.
+
+Due: 2 AM, Monday, October 21 on elearning
+
+
+Compare the performance of the following hashing algorithms:
+(a) separate chaining with 2-choice hashing,
+(b) open addressing with double hashing,
+(c) cuckoo hashing,
+(d) any other hashing algorithm of your choice.
+
+In cuckoo hashing, experiment with 2-4 tables, and 1-2 elements per bucket.
+Assume that keys are long integers.
+Test your programs on tables of size up to 10 million and propose the
+best algorithm for the problem.
+
+Input: similar format as project 4.  Write driver programs to illustrate
+the performance of your algorithms.  For the best algorithm that you
+selected, output just the number of times that Find failed.
+
+Sample input:
+
+Insert 45267
+Insert 54627
+Find 45267
+Find 54672
+Remove 45267
+Find 45267
+
+Sample output:
+2
+
